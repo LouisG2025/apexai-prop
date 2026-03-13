@@ -48,10 +48,10 @@ export default function After5Section() {
 
           <div className="reveal-hidden max-w-[560px] mb-8">
             <p className="text-[17px] text-white/60 leading-[1.65] mb-1" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              After5 is our AI sales agent product. Built for one problem... leads that arrive when nobody is watching.
+              After5 is our AI sales agent brand. Built for one problem... leads that arrive when nobody is watching.
             </p>
             <p className="text-[17px] text-white/60 leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              After hours. Weekends. Bank holidays. Every enquiry captured, qualified, and booked. 24/7.
+              After hours. Weekends. Bank holidays. We make sure every enquiry is captured, qualified, and booked. 24/7.
             </p>
           </div>
 

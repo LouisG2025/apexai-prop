@@ -122,7 +122,7 @@ export default function ServicesSection() {
               className={`text-[32px] sm:text-[40px] lg:text-[44px] text-white leading-[1.1] mb-4 transition-all duration-600 delay-100 ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`}
               style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
             >
-              Everything we could bring to your clients.
+              Everything we can bring to your clients.
             </h2>
             <p
               className={`text-[16px] text-white/50 leading-[1.7] mb-8 transition-all duration-600 delay-200 ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`}

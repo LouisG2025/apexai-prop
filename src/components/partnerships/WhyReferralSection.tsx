@@ -11,8 +11,8 @@ const blocks = [
   {
     icon: Cpu,
     label: 'WE DELIVER',
-    bold: 'We jump on a strategy call with the client, design the solution, build it, and deliver it.',
-    muted: 'Your name stays on the relationship. Ours stays behind the scenes.',
+    bold: 'We discuss, design, build, and deliver.',
+    muted: 'You work on the relationship. We work behind the scenes.',
   },
   {
     icon: Coins,
@@ -65,7 +65,7 @@ export default function PartnershipSection() {
                     <Icon className="w-5 h-5 text-[#0152ff]" strokeWidth={2} />
                   </div>
                   <p
-                    className="text-[11px] uppercase tracking-[0.18em] text-[#0152ff] mb-4"
+                    className="text-[11px] uppercase tracking-[0.18em] text-white mb-4"
                     style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600 }}
                   >
                     {block.label}
@@ -74,7 +74,7 @@ export default function PartnershipSection() {
                     {block.bold}
                   </p>
                   {block.muted && (
-                    <p className="text-[14px] text-white/40 leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    <p className="text-[14px] text-white leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                       {block.muted}
                     </p>
                   )}
