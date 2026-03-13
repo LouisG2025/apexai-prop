@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 const cards = [
@@ -25,15 +25,21 @@ const cards = [
 export default function HowWeThinkSection() {
   const ref = useScrollReveal(120);
   const [flippedIndex, setFlippedIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   const handleTap = (i: number) => {
     setFlippedIndex(flippedIndex === i ? null : i);
   };
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-
   return (
-    <section id="approach" className="bg-[#0a0f1e] py-28 lg:py-36 px-6" ref={ref}>
+    <section id="approach" className="bg-[#0a0f1e] py-16 md:py-28 lg:py-36 px-6" ref={ref}>
       <div className="max-w-6xl mx-auto">
         <p className="reveal-hidden text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
           Our Approach
@@ -45,7 +51,7 @@ export default function HowWeThinkSection() {
           We are not just builders. We are thinkers.
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((card, i) => (
             <div
               key={i}
@@ -56,13 +62,13 @@ export default function HowWeThinkSection() {
               <div className="flip-card-inner">
                 <div className="flip-card-front">
                   <span
-                    className="text-[56px] lg:text-[64px] text-white leading-none"
+                    className="text-[48px] md:text-[56px] lg:text-[64px] text-white leading-none"
                     style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
                   >
                     {card.line1}
                   </span>
                   <span
-                    className="text-[32px] lg:text-[36px] text-white/50 leading-none mt-1"
+                    className="text-[28px] md:text-[32px] lg:text-[36px] text-white/50 leading-none mt-1"
                     style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 700 }}
                   >
                     {card.line2}
@@ -88,7 +94,7 @@ export default function HowWeThinkSection() {
         </div>
 
         <p
-          className="reveal-hidden text-[22px] lg:text-[24px] text-[#0152ff] text-center mt-16"
+          className="reveal-hidden text-[20px] md:text-[22px] lg:text-[24px] text-[#0152ff] text-center mt-16"
           style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
         >
           We don't want clients. We want long-term growth partnerships.

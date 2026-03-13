@@ -56,7 +56,7 @@ export default function ShiftSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#0a0f1e] py-28 lg:py-36 px-6">
+    <section ref={sectionRef} className="bg-[#0a0f1e] py-16 md:py-28 lg:py-36 px-6">
       <div className="max-w-4xl mx-auto">
         <p
           className={`text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3 transition-all duration-600 ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`}
@@ -89,7 +89,7 @@ export default function ShiftSection() {
               />
               <div className="relative py-10 lg:py-14 overflow-hidden">
                 <span
-                  className="absolute right-0 top-1/2 -translate-y-1/2 text-[120px] lg:text-[160px] leading-none text-[#0152ff]/[0.06] select-none pointer-events-none"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 text-[70px] md:text-[120px] lg:text-[160px] leading-none text-[#0152ff]/[0.06] select-none pointer-events-none"
                   style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 900 }}
                 >
                   {s.num}
@@ -106,7 +106,7 @@ export default function ShiftSection() {
         </div>
 
         <p
-          className={`text-[22px] lg:text-[24px] text-[#0152ff] text-center leading-[1.3] transition-all duration-600 delay-500 ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`}
+          className={`text-[20px] md:text-[22px] lg:text-[24px] text-[#0152ff] text-center leading-[1.3] transition-all duration-600 delay-500 ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`}
           style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
         >
           This is not a trend. It is a shift. And the agencies that move first will be the ones still standing in two years.

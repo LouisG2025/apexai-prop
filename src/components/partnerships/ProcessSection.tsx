@@ -59,7 +59,7 @@ export default function ProcessSection() {
   }, []);
 
   return (
-    <section id="process" ref={sectionRef} className="bg-[#0a0f1e] py-28 lg:py-36 px-6">
+    <section id="process" ref={sectionRef} className="bg-[#0a0f1e] py-16 md:py-28 lg:py-36 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="lg:grid lg:grid-cols-[320px_1fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start mb-12 lg:mb-0">
@@ -80,7 +80,7 @@ export default function ProcessSection() {
           <div className="relative">
             <div className="absolute left-[18px] top-0 bottom-0 w-[2px] bg-white/[0.06] hidden lg:block" />
 
-            <div className="space-y-12 lg:space-y-16">
+            <div className="space-y-10 md:space-y-12 lg:space-y-16">
               {steps.map((step, i) => (
                 <div
                   key={i}

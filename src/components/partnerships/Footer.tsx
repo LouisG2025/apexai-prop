@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#0a0f1e] border-t border-white/[0.08] px-6 lg:px-20 py-10">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 text-center">
           <img
             src="/white_ApexAI_logo.png"
             alt="ApexAI"
@@ -21,7 +21,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="border-t border-white/[0.06] pt-6 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
+        <div className="border-t border-white/[0.06] pt-6 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-10">
           <a
             href="https://www.after5.digital"
             target="_blank"

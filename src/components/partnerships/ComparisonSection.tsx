@@ -32,7 +32,7 @@ export default function ComparisonSection() {
   const ref = useScrollReveal(150);
 
   return (
-    <section id="difference" className="bg-[#0a0f1e] py-28 lg:py-36 px-6" ref={ref}>
+    <section id="difference" className="bg-[#0a0f1e] py-16 md:py-28 lg:py-36 px-6" ref={ref}>
       <div className="max-w-5xl mx-auto">
         <p className="reveal-hidden text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
           The Difference
@@ -53,23 +53,45 @@ export default function ComparisonSection() {
           </p>
         </div>
 
-        <div className="space-y-0">
+        <div className="hidden md:block">
+          <div className="space-y-0">
+            {rows.map((row, i) => (
+              <div key={i} className="grid md:grid-cols-2 gap-x-8 lg:gap-x-16 border-b border-white/[0.04]">
+                <div className="reveal-left py-5 flex items-start gap-3">
+                  <X className="w-4 h-4 text-red-400/70 shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <p className="text-[14px] text-white/50 leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{row.without}</p>
+                </div>
+                <div className="reveal-right py-5 flex items-start gap-3">
+                  <Check className="w-4 h-4 text-[#0152ff] shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <p className="text-[14px] text-white leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{row.withAi}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="md:hidden flex flex-col gap-4">
           {rows.map((row, i) => (
-            <div key={i} className="grid md:grid-cols-2 gap-x-8 lg:gap-x-16 border-b border-white/[0.04]">
-              <div className="reveal-left py-5 flex items-start gap-3">
+            <div
+              key={i}
+              className="reveal-hidden bg-[#111827] border border-white/[0.06] rounded-2xl p-5"
+            >
+              <div className="flex items-start gap-3 mb-3">
                 <X className="w-4 h-4 text-red-400/70 shrink-0 mt-0.5" strokeWidth={2.5} />
                 <p className="text-[14px] text-white/50 leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{row.without}</p>
               </div>
-              <div className="reveal-right py-5 flex items-start gap-3">
-                <Check className="w-4 h-4 text-[#0152ff] shrink-0 mt-0.5" strokeWidth={2.5} />
-                <p className="text-[14px] text-white leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{row.withAi}</p>
+              <div className="border-t border-white/[0.06] pt-3">
+                <div className="flex items-start gap-3">
+                  <Check className="w-4 h-4 text-[#0152ff] shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <p className="text-[14px] text-white leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>{row.withAi}</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
         <p
-          className="reveal-hidden text-[24px] lg:text-[28px] text-white text-center mt-20 max-w-3xl mx-auto leading-[1.25]"
+          className="reveal-hidden text-[22px] md:text-[24px] lg:text-[28px] text-white text-center mt-20 max-w-3xl mx-auto leading-[1.25]"
           style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
         >
           You either introduce AI to your clients. Or a competitor does it first.

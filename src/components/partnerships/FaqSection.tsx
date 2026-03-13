@@ -34,7 +34,7 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#0a0f1e] py-28 lg:py-36 px-6" ref={ref}>
+    <section className="bg-[#0a0f1e] py-16 md:py-28 lg:py-36 px-6" ref={ref}>
       <div className="max-w-[640px] mx-auto">
         <p className="reveal-hidden text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3 text-center" style={{ fontFamily: "'DM Sans', sans-serif" }}>
           FAQ

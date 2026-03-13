@@ -2,6 +2,7 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import { ChevronDown, Play, X } from 'lucide-react';
 
 const h1Words = ['AI', 'is', 'now', 'part', 'of', 'the', 'pitch.', '|||', 'Is', 'it', 'part', 'of'];
+const WORD_DELAY_MS = 40;
 
 export default function HeroSection() {
   const [on, setOn] = useState(false);
@@ -37,7 +38,7 @@ export default function HeroSection() {
       <section
         ref={sectionRef}
         onMouseMove={handleMouseMove}
-        className="min-h-screen bg-[#0a0f1e] grid-bg flex items-center px-6 lg:px-12 relative overflow-hidden"
+        className="min-h-screen bg-[#0a0f1e] grid-bg flex items-center px-6 md:px-12 relative overflow-hidden"
       >
         <div
           ref={glowRef}
@@ -45,7 +46,7 @@ export default function HeroSection() {
           style={{ background: 'radial-gradient(ellipse at 30% 40%, rgba(1,82,255,0.10) 0%, transparent 60%)' }}
         />
 
-        <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10 pt-24 pb-16">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10 pt-24 pb-16">
           <div>
             <div style={fade(0)}>
               <span
@@ -56,7 +57,10 @@ export default function HeroSection() {
               </span>
             </div>
 
-            <h1 style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }} className="text-[36px] sm:text-[48px] lg:text-[56px] xl:text-[64px] text-white leading-[1.08] mb-6">
+            <h1
+              style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800, fontSize: 'clamp(32px, 8vw, 64px)' }}
+              className="text-white leading-[1.08] mb-6"
+            >
               {h1Words.map((w, i) =>
                 w === '|||' ? (
                   <br key={i} />
@@ -67,7 +71,7 @@ export default function HeroSection() {
                     style={{
                       opacity: on ? 1 : 0,
                       transform: on ? 'translateY(0)' : 'translateY(18px)',
-                      transition: `opacity 350ms cubic-bezier(0.16,1,0.3,1) ${i * 50}ms, transform 350ms cubic-bezier(0.16,1,0.3,1) ${i * 50}ms`,
+                      transition: `opacity 350ms cubic-bezier(0.16,1,0.3,1) ${i * WORD_DELAY_MS}ms, transform 350ms cubic-bezier(0.16,1,0.3,1) ${i * WORD_DELAY_MS}ms`,
                     }}
                   >
                     {w}
@@ -80,7 +84,7 @@ export default function HeroSection() {
                   color: '#0152ff',
                   opacity: on ? 1 : 0,
                   transform: on ? 'translateY(0)' : 'translateY(18px)',
-                  transition: `opacity 350ms cubic-bezier(0.16,1,0.3,1) ${h1Words.length * 50}ms, transform 350ms cubic-bezier(0.16,1,0.3,1) ${h1Words.length * 50}ms`,
+                  transition: `opacity 350ms cubic-bezier(0.16,1,0.3,1) ${h1Words.length * WORD_DELAY_MS}ms, transform 350ms cubic-bezier(0.16,1,0.3,1) ${h1Words.length * WORD_DELAY_MS}ms`,
                 }}
               >
                 yours?
@@ -88,7 +92,7 @@ export default function HeroSection() {
             </h1>
 
             <p
-              className="text-lg text-white/60 max-w-[480px] leading-[1.7] mb-8"
+              className="text-base md:text-lg text-white/60 max-w-[480px] leading-[1.7] mb-8"
               style={{ fontFamily: "'DM Sans', sans-serif", ...fade(800) }}
             >
               Agencies adding AI to their offer are winning more clients, retaining them longer, and charging more. We make that possible without you building anything.
@@ -97,7 +101,7 @@ export default function HeroSection() {
             <div style={fade(1000)}>
               <button
                 onClick={scrollToBooking}
-                className="bg-[#0152ff] text-white text-base px-10 py-4 rounded-full hover:scale-[1.03] hover:brightness-110 hover:shadow-[0_0_40px_rgba(1,82,255,0.5)] transition-all duration-200"
+                className="w-full md:w-auto bg-[#0152ff] text-white text-base px-10 py-4 rounded-full hover:scale-[1.03] hover:brightness-110 hover:shadow-[0_0_40px_rgba(1,82,255,0.5)] transition-all duration-200"
                 style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600 }}
               >
                 Book a Partnership Discovery Call
@@ -124,7 +128,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-pulse-down" style={fade(1300)}>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-pulse-down hidden md:block" style={fade(1300)}>
           <ChevronDown className="w-5 h-5 text-white/30" />
         </div>
       </section>

@@ -19,15 +19,15 @@ export default function GapSection() {
   const ref = useScrollReveal();
 
   return (
-    <section className="bg-[#0a0f1e] py-16 lg:py-24 px-6" ref={ref}>
+    <section className="bg-[#0a0f1e] py-16 md:py-16 lg:py-24 px-6" ref={ref}>
       <div className="max-w-5xl mx-auto">
-        <div className="bg-[#111827] rounded-3xl border border-white/[0.05] p-10 sm:p-14 lg:px-20 lg:py-16">
+        <div className="bg-[#111827] rounded-3xl border border-white/[0.05] p-6 sm:p-14 lg:px-20 lg:py-16">
           <p className="reveal-hidden text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             The Offer Gap
           </p>
           <h2
-            className="reveal-hidden text-[32px] sm:text-[40px] lg:text-[48px] text-white leading-[1.1] mb-6"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
+            className="reveal-hidden text-white leading-[1.1] mb-6"
+            style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800, fontSize: 'clamp(28px, 7vw, 48px)' }}
           >
             Your clients are not paying for marketing. They are paying for growth.
           </h2>

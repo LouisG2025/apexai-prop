@@ -6,6 +6,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -14,6 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
   background: #0a0f1e;
+  overflow-x: hidden;
 }
 
 .font-headline {
@@ -73,9 +75,26 @@ body {
   transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner,
+@media (min-width: 768px) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
 .flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
+}
+
+@media (max-width: 767px) {
+  .reveal-left,
+  .reveal-right {
+    opacity: 0;
+    transform: translateY(30px) !important;
+  }
+  .reveal-left.reveal-visible,
+  .reveal-right.reveal-visible {
+    transform: translateY(0) !important;
+  }
 }
 
 .flip-card-front,

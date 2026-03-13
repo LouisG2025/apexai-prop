@@ -29,7 +29,7 @@ export default function PartnershipSection() {
   return (
     <section id="partnership" className="bg-[#0a0f1e] py-16 lg:py-24 px-6" ref={ref}>
       <div className="max-w-5xl mx-auto">
-        <div className="bg-[#111827] rounded-3xl border border-white/[0.05] p-10 sm:p-14 lg:px-20 lg:py-16">
+        <div className="bg-[#111827] rounded-3xl border border-white/[0.05] p-6 sm:p-14 lg:px-20 lg:py-16">
           <p className="reveal-hidden text-[11px] uppercase tracking-[0.18em] text-white/40 mb-10 text-center" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             The Partnership
           </p>
@@ -43,7 +43,7 @@ export default function PartnershipSection() {
 
           <div ref={counter.ref} className="reveal-hidden text-center mb-14">
             <span
-              className="text-[100px] lg:text-[140px] text-[#0152ff] leading-none"
+              className="text-[80px] md:text-[100px] lg:text-[140px] text-[#0152ff] leading-none"
               style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
             >
               {counter.value}%
@@ -53,7 +53,7 @@ export default function PartnershipSection() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {blocks.map((block, i) => {
               const Icon = block.icon;
               return (

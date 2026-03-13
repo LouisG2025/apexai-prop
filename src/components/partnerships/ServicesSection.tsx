@@ -108,7 +108,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" ref={sectionRef} className="bg-[#0a0f1e] py-28 lg:py-36 px-6">
+    <section id="services" ref={sectionRef} className="bg-[#0a0f1e] py-16 md:py-28 lg:py-36 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="lg:grid lg:grid-cols-[340px_1fr] lg:gap-16">
           <div className="lg:sticky lg:top-32 lg:self-start mb-12 lg:mb-0">
@@ -144,12 +144,12 @@ export default function ServicesSection() {
             </div>
           </div>
 
-          <div className="space-y-5">
+          <div className="space-y-4 md:space-y-5">
             {services.map((s, i) => (
               <div
                 key={i}
                 ref={(el) => { cardRefs.current[i] = el; }}
-                className={`bg-[#111827] border rounded-2xl p-8 transition-all duration-300 ${i === activeIndex ? 'border-[#0152ff]/30 shadow-[0_0_30px_rgba(1,82,255,0.08)]' : 'border-white/[0.06]'}`}
+                className={`bg-[#111827] border rounded-2xl p-6 md:p-8 transition-all duration-300 ${i === activeIndex ? 'border-[#0152ff]/30 shadow-[0_0_30px_rgba(1,82,255,0.08)]' : 'border-white/[0.06]'}`}
                 style={{
                   opacity: revealed ? 1 : 0,
                   transform: revealed ? 'translateY(0)' : 'translateY(30px)',
@@ -172,7 +172,7 @@ export default function ServicesSection() {
             ))}
 
             <div
-              className="bg-[#111827] border border-white/[0.06] rounded-2xl p-8 lg:p-10"
+              className="bg-[#111827] border border-white/[0.06] rounded-2xl p-6 md:p-8 lg:p-10"
               style={{
                 opacity: revealed ? 1 : 0,
                 transform: revealed ? 'translateY(0)' : 'translateY(30px)',

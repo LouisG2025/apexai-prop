@@ -37,13 +37,13 @@ export default function After5Section() {
   return (
     <section id="after5" className="bg-[#0a0f1e] py-16 lg:py-24 px-6" ref={ref}>
       <div className="max-w-7xl mx-auto">
-        <div className="bg-[#111827] rounded-3xl p-10 sm:p-14 lg:px-20 lg:py-[72px] overflow-hidden relative border border-white/[0.05]">
+        <div className="bg-[#111827] rounded-3xl p-6 sm:p-14 lg:px-20 lg:py-[72px] overflow-hidden relative border border-white/[0.05]">
           <p className="reveal-hidden text-[11px] uppercase tracking-[0.25em] text-[#2EFFA1] mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Part of the ApexAI Family
           </p>
 
           <div className="reveal-hidden mb-4">
-            <img src="/LONG_MAIN_LOGO.png" alt="After5 Digital" style={{ height: '60px', width: 'auto', marginBottom: '32px' }} />
+            <img src="/LONG_MAIN_LOGO.png" alt="After5 Digital" className="h-10 md:h-[60px] w-auto mb-8" />
           </div>
 
           <div className="reveal-hidden max-w-[560px] mb-8">
@@ -67,13 +67,13 @@ export default function After5Section() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
             {channelsBase.map((c, i) => {
               const Icon = c.icon;
               return (
                 <div
                   key={i}
-                  className="reveal-hidden bg-white/5 border border-[#2EFFA1]/20 rounded-2xl p-7 hover:border-[#2EFFA1] hover:bg-[#2EFFA1]/[0.06] hover:-translate-y-1 transition-all duration-[250ms]"
+                  className="reveal-hidden bg-white/5 border border-[#2EFFA1]/20 rounded-2xl p-5 md:p-7 hover:border-[#2EFFA1] hover:bg-[#2EFFA1]/[0.06] hover:-translate-y-1 transition-all duration-[250ms]"
                   style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }}
                 >
                   <div className="w-10 h-10 rounded-[10px] bg-[#2EFFA1]/[0.15] flex items-center justify-center mb-5">
@@ -101,7 +101,7 @@ export default function After5Section() {
               href="https://after5.digital"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[#2EFFA1] text-[#2EFFA1] text-sm px-9 py-3.5 rounded-full bg-transparent hover:bg-[#2EFFA1]/[0.08] transition-all duration-200"
+              className="w-full sm:w-auto text-center border border-[#2EFFA1] text-[#2EFFA1] text-sm px-9 py-3.5 rounded-full bg-transparent hover:bg-[#2EFFA1]/[0.08] transition-all duration-200"
               style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 600 }}
             >
               Visit After5 Digital
@@ -110,7 +110,7 @@ export default function After5Section() {
               href="https://after5.digital/demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#2EFFA1] text-[#0a0f1e] text-sm px-9 py-3.5 rounded-full hover:brightness-[1.08] hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(46,255,161,0.4)] transition-all duration-200"
+              className="w-full sm:w-auto text-center bg-[#2EFFA1] text-[#0a0f1e] text-sm px-9 py-3.5 rounded-full hover:brightness-[1.08] hover:scale-[1.02] hover:shadow-[0_0_24px_rgba(46,255,161,0.4)] transition-all duration-200"
               style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700 }}
             >
               Try the Demo
