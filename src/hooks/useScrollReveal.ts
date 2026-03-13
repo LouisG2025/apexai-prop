@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 
-export function useScrollReveal(staggerMs = 90) {
+export function useScrollReveal(staggerMs = 100) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -8,20 +8,6 @@ export function useScrollReveal(staggerMs = 90) {
     if (!container) return;
 
     const elements = container.querySelectorAll('.reveal-hidden, .reveal-left, .reveal-right');
-    const sectionClips = container.querySelectorAll('.section-clip');
-
-    const clipObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('section-clip-visible');
-            clipObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.05 }
-    );
-    sectionClips.forEach((el) => clipObserver.observe(el));
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -45,21 +31,18 @@ export function useScrollReveal(staggerMs = 90) {
           observer.unobserve(el);
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.12 }
     );
 
     elements.forEach((el) => observer.observe(el));
 
-    return () => {
-      observer.disconnect();
-      clipObserver.disconnect();
-    };
+    return () => observer.disconnect();
   }, [staggerMs]);
 
   return containerRef;
 }
 
-export function useCountUp(end: number, duration = 1200) {
+export function useCountUp(end: number, duration = 1400) {
   const [value, setValue] = useState(0);
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

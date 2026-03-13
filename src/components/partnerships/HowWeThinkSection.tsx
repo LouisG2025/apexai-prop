@@ -5,29 +5,17 @@ const cards = [
   {
     word: 'ROI',
     title: 'ROI First',
-    lines: [
-      'Every system we build starts with one question. What is the measurable return.',
-      'We do not build for the sake of building. We build because the outcome justifies it.',
-      'If the ROI case is not clear before we start, we say so.',
-    ],
+    body: 'Every system starts with one question. What is the measurable return. If the ROI case is not clear before we start, we say so.',
   },
   {
     word: 'Strategy',
     title: 'Strategic Thinking',
-    lines: [
-      'Automation without strategy is just chasing trends.',
-      'Before we plan even one part of architecture, we understand the business, the market, the sales process, and where the real leverage is.',
-      'Then we build.',
-    ],
+    body: 'Automation without strategy is just chasing trends. We understand the business, the market and the goals first. Then we design.',
   },
   {
     word: 'Craft',
     title: 'Creative Execution',
-    lines: [
-      'The best systems are not just functional. They are designed.',
-      'The way a lead is handled, the tone of an AI agent, the flow of a pipeline. These things affect how a business is perceived.',
-      'We bring creative thinking to every build, not just technical delivery.',
-    ],
+    body: 'We strategise, plan and design creatively, thinking different, spotting opportunities others would miss and seeing gaps to help gain an edge.',
   },
 ];
 
@@ -40,12 +28,15 @@ export default function HowWeThinkSection() {
   };
 
   return (
-    <section className="bg-[#0a0f1e] py-28 lg:py-36 px-6" ref={ref}>
-      <div className="max-w-7xl mx-auto">
-        <p className="reveal-hidden font-dm text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3">
+    <section id="approach" className="bg-[#0a0f1e] py-28 lg:py-36 px-6" ref={ref}>
+      <div className="max-w-6xl mx-auto">
+        <p className="reveal-hidden text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
           Our Approach
         </p>
-        <h2 className="reveal-hidden font-headline text-[32px] sm:text-[40px] lg:text-[52px] text-white leading-[1.1] mb-16 max-w-2xl">
+        <h2
+          className="reveal-hidden text-[32px] sm:text-[40px] lg:text-[52px] text-white leading-[1.1] mb-16 max-w-2xl"
+          style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
+        >
           We are not just builders. We are thinkers.
         </h2>
 
@@ -59,30 +50,37 @@ export default function HowWeThinkSection() {
             >
               <div className="flip-card-inner">
                 <div className="flip-card-front">
-                  <span className="font-headline text-[64px] lg:text-[72px] text-white leading-none">
+                  <span
+                    className="text-[64px] lg:text-[72px] text-white leading-none"
+                    style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
+                  >
                     {card.word}
                   </span>
-                  <span className="font-dm text-[11px] text-white/20 tracking-[0.15em] uppercase mt-4">
+                  <span className="text-[11px] text-white/20 tracking-[0.15em] uppercase mt-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
                     Hover to flip
                   </span>
                 </div>
                 <div className="flip-card-back text-center">
-                  <h3 className="font-headline text-xl text-white mb-5">
+                  <h3
+                    className="text-xl text-white mb-4"
+                    style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
+                  >
                     {card.title}
                   </h3>
-                  {card.lines.map((line, j) => (
-                    <p key={j} className="font-dm text-[15px] text-white/85 leading-[1.65] mb-2">
-                      {line}
-                    </p>
-                  ))}
+                  <p className="text-[15px] text-white/90 leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    {card.body}
+                  </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <p className="reveal-hidden font-headline text-[22px] lg:text-[24px] text-electric text-center mt-16">
-          We do not want clients. We want long term growth partnerships.
+        <p
+          className="reveal-hidden text-[22px] lg:text-[24px] text-[#0152ff] text-center mt-16"
+          style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
+        >
+          We don't want clients. We want long-term growth partnerships.
         </p>
       </div>
     </section>

@@ -4,13 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: '#111827',
+        navy: '#0a0f1e',
+        'card-dark': '#111827',
         electric: '#0152ff',
-        'off-white': '#f6f6f7',
         after5: '#2EFFA1',
       },
       fontFamily: {
-        headline: ["'CabinetGrotesk'", "'Inter'", 'sans-serif'],
+        headline: ["'Cabinet Grotesk'", 'sans-serif'],
+        body: ["'DM Sans'", 'sans-serif'],
         mono: ["'JetBrains Mono'", 'monospace'],
       },
     },

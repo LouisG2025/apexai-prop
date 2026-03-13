@@ -1,58 +1,46 @@
-import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { useScrollReveal, useCountUp } from '../../hooks/useScrollReveal';
 
-const tableRows = [
-  { label: 'Delivery risk', wl: 'You own it', ref: 'We own it' },
-  { label: 'Technical support', wl: 'Your team', ref: 'Our team' },
-  { label: 'What you need to know', wl: 'The whole product', ref: 'Just who to call' },
-  { label: 'Commission', wl: 'Eroded by ops overhead', ref: '15%, zero overhead' },
-  { label: 'Exit if it goes wrong', wl: 'Complicated', ref: 'Clean and simple' },
-];
-
-export default function WhyReferralSection() {
+export default function PartnershipSection() {
   const ref = useScrollReveal();
+  const counter = useCountUp(15);
 
   return (
-    <section className="bg-[#0a0f1e] py-28 lg:py-36 px-6" ref={ref}>
+    <section id="partnership" className="bg-[#0a0f1e] py-16 lg:py-24 px-6" ref={ref}>
       <div className="max-w-5xl mx-auto">
-        <p className="reveal-hidden font-dm text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3">
-          Why Referral, Not White Label
-        </p>
-        <h2 className="reveal-hidden font-headline text-[32px] sm:text-[40px] lg:text-[48px] text-white leading-[1.1] mb-16 max-w-3xl">
-          Specialists working together beat generalists pretending to be everything.
-        </h2>
+        <div className="bg-[#111827] rounded-3xl border border-white/[0.05] p-10 sm:p-14 lg:px-20 lg:py-16">
+          <p className="reveal-hidden text-[11px] uppercase tracking-[0.18em] text-white/40 mb-10" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            The Partnership
+          </p>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-20">
-          <div className="space-y-8">
-            <p className="reveal-hidden font-dm text-[16px] text-white/60 leading-[1.75]">
-              White labelling puts you in the middle of a product you did not build. Your team fields technical questions they cannot answer. You own the relationship when something goes wrong. You become a jack of all trades, which is exactly what clients pay specialists to avoid.
-            </p>
-            <p className="reveal-hidden font-dm text-[16px] text-white/60 leading-[1.75]">
-              The referral model works differently. Clients want the best results. So you stay in your lane. We stay in ours. The client gets two specialists working in partnership toward one outcome: their growth. That is a story you can tell with genuine confidence. Not because you are pretending. Because you brought in the right people.
-            </p>
-            <p className="reveal-hidden font-dm text-[16px] text-white/60 leading-[1.75]">
-              And the numbers work. Digital marketing agencies already run on referral and commission structures. 15% sits well within your existing margins. You refer once. You earn on the build. You earn on retainers where agreed. Zero operational overhead. Zero technical liability. Two specialists. One client. Better results.
+          <h2
+            className="reveal-hidden text-[32px] sm:text-[40px] lg:text-[48px] text-white leading-[1.1] mb-10"
+            style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
+          >
+            How it works between us.
+          </h2>
+
+          <div ref={counter.ref} className="reveal-hidden text-center mb-10">
+            <span
+              className="text-[100px] lg:text-[140px] text-[#0152ff] leading-none"
+              style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
+            >
+              {counter.value}%
+            </span>
+            <p className="text-[17px] text-white/50 mt-3" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              commission on every build. Retainers too, where agreed.
             </p>
           </div>
 
-          <div className="reveal-hidden overflow-hidden rounded-xl border border-white/[0.06]">
-            <table className="w-full text-left">
-              <thead>
-                <tr className="bg-electric/15">
-                  <th className="font-headline text-[14px] text-electric px-5 py-4">&nbsp;</th>
-                  <th className="font-headline text-[14px] text-electric px-5 py-4">White Label</th>
-                  <th className="font-headline text-[14px] text-electric px-5 py-4">Referral Partnership</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tableRows.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-[#111827]' : 'bg-white/[0.02]'}>
-                    <td className="font-dm text-[13px] text-white/60 px-5 py-3.5">{row.label}</td>
-                    <td className="font-dm text-[13px] text-white/40 px-5 py-3.5">{row.wl}</td>
-                    <td className="font-dm text-[13px] text-white px-5 py-3.5">{row.ref}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="space-y-8 max-w-[640px] mx-auto mb-0">
+            <p className="reveal-hidden text-[16px] text-white/60 leading-[1.75]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              You pitch AI as part of your offer. When a client is interested, you introduce us.
+            </p>
+            <p className="reveal-hidden text-[16px] text-white/60 leading-[1.75]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              We jump on a strategy call with the client, design the solution, build it, and deliver it. Your name stays on the relationship. Ours stays behind the scenes.
+            </p>
+            <p className="reveal-hidden text-[16px] text-white/60 leading-[1.75]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              You earn on every project. No overhead. No technical questions to answer. No delivery to manage.
+            </p>
           </div>
         </div>
       </div>
