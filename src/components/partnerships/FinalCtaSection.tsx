@@ -1,62 +1,129 @@
-import { useEffect } from 'react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 
-const skeletonBar = (width: string) => ({
+const barStyle = (width: string) => ({
   width,
   height: '14px',
   borderRadius: '6px',
-  background: 'rgba(255,255,255,0.06)',
+  background: 'rgba(255,255,255,0.03)',
 });
 
-const skeletonCircle = {
+const circleStyle = {
   width: '28px',
   height: '28px',
   borderRadius: '50%',
-  background: 'rgba(255,255,255,0.06)',
+  background: 'rgba(255,255,255,0.03)',
 };
 
-function CalendarSkeleton() {
+function BookingCard() {
   return (
     <div
-      id="calendly-skeleton"
       style={{
-        position: 'absolute',
-        inset: 0,
-        zIndex: 2,
+        position: 'relative',
         background: '#0A0F1E',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderRadius: '16px',
-        animation: 'skeletonPulse 1.5s infinite ease-in-out',
+        border: '1px solid rgba(255,255,255,0.05)',
+        borderRadius: '24px',
+        maxWidth: '1000px',
+        margin: '0 auto',
+        padding: '64px',
+        overflow: 'hidden',
       }}
     >
-      <style>{`
-        @keyframes skeletonPulse {
-          0%, 100% { opacity: 0.4; }
-          50% { opacity: 0.8; }
-        }
-      `}</style>
-      <div style={{ display: 'flex', gap: '48px', alignItems: 'flex-start' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <div style={{ width: '200px', height: '160px', borderRadius: '12px', background: 'rgba(255,255,255,0.06)' }} />
-          <div style={skeletonBar('180px')} />
-          <div style={skeletonBar('140px')} />
-          <div style={skeletonBar('160px')} />
-          <div style={skeletonBar('120px')} />
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            <div style={skeletonBar('200px')} />
-            <div style={skeletonBar('160px')} />
-            <div style={skeletonBar('120px')} />
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          pointerEvents: 'none',
+        }}
+      >
+        <div style={{ display: 'flex', gap: '48px', alignItems: 'flex-start', opacity: 1 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={{ width: '200px', height: '160px', borderRadius: '12px', background: 'rgba(255,255,255,0.03)' }} />
+            <div style={barStyle('180px')} />
+            <div style={barStyle('140px')} />
+            <div style={barStyle('160px')} />
+            <div style={barStyle('120px')} />
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 28px)', gap: '10px' }}>
-            {Array.from({ length: 35 }).map((_, i) => (
-              <div key={i} style={skeletonCircle} />
-            ))}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={barStyle('200px')} />
+              <div style={barStyle('160px')} />
+              <div style={barStyle('120px')} />
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 28px)', gap: '10px' }}>
+              {Array.from({ length: 35 }).map((_, i) => (
+                <div key={i} style={circleStyle} />
+              ))}
+            </div>
           </div>
         </div>
+      </div>
+
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          gap: '20px',
+          minHeight: '260px',
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: '13px',
+            color: 'rgba(255,255,255,0.35)',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            fontWeight: 500,
+          }}
+        >
+          Partnerships Discovery Call
+        </p>
+        <h3
+          style={{
+            fontFamily: "'Cabinet Grotesk', sans-serif",
+            fontWeight: 800,
+            fontSize: 'clamp(24px, 4vw, 36px)',
+            color: '#ffffff',
+            lineHeight: 1.2,
+            margin: 0,
+          }}
+        >
+          30 minutes with Louis Grange
+        </h3>
+        <button
+          onClick={() => window.open('https://calendly.com/_apexai/partnerships-call', '_blank')}
+          style={{
+            fontFamily: "'DM Sans', sans-serif",
+            fontWeight: 700,
+            fontSize: '16px',
+            color: '#0A0F1E',
+            background: '#ffffff',
+            border: 'none',
+            borderRadius: '9999px',
+            padding: '16px 48px',
+            cursor: 'pointer',
+            marginTop: '8px',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'scale(1.03)';
+            e.currentTarget.style.boxShadow = '0 0 40px rgba(255,255,255,0.15)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.boxShadow = 'none';
+          }}
+        >
+          Book a Call
+        </button>
       </div>
     </div>
   );
@@ -64,20 +131,6 @@ function CalendarSkeleton() {
 
 export default function FinalCtaSection() {
   const ref = useScrollReveal();
-
-  useEffect(() => {
-    const check = setInterval(() => {
-      const iframe = document.querySelector('.calendly-inline-widget iframe');
-      const skeleton = document.getElementById('calendly-skeleton');
-      if (iframe && skeleton && (iframe as HTMLIFrameElement).getBoundingClientRect().height > 100) {
-        skeleton.style.opacity = '0';
-        skeleton.style.transition = 'opacity 0.5s ease';
-        skeleton.style.pointerEvents = 'none';
-        clearInterval(check);
-      }
-    }, 500);
-    return () => clearInterval(check);
-  }, []);
 
   return (
     <section
@@ -114,10 +167,7 @@ export default function FinalCtaSection() {
       </div>
 
       <div id="booking" className="mt-16 md:mt-20" style={{ scrollMarginTop: 'calc(50vh - 200px)' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto', borderRadius: '16px', overflow: 'hidden', background: '#0A0F1E', border: '1px solid rgba(255,255,255,0.05)', position: 'relative', minHeight: '700px' }}>
-          <div className="calendly-inline-widget" data-url="https://calendly.com/_apexai/partnerships-call?hide_gdpr_banner=1&background_color=0a0f1e&text_color=ffffff&primary_color=0152ff" style={{ minWidth: '320px', height: '700px', width: '100%', position: 'relative', zIndex: 1 }} />
-          <CalendarSkeleton />
-        </div>
+        <BookingCard />
       </div>
     </section>
   );
