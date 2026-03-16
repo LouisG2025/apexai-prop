@@ -57,24 +57,24 @@ export default function FinalCtaSection() {
           id="booking"
           className="reveal-hidden"
           style={{
-            maxWidth: '900px',
+            maxWidth: '1000px',
             width: '100%',
             margin: '0 auto',
-            minHeight: '700px',
-            background: 'rgba(255, 255, 255, 0.05)',
-            backdropFilter: 'blur(16px)',
-            WebkitBackdropFilter: 'blur(16px)',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
+            minHeight: '800px',
+            background: 'rgba(10, 15, 30, 0.4)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            border: '1px solid rgba(255, 255, 255, 0.12)',
             borderRadius: '32px',
             overflow: 'hidden',
-            boxShadow: '0 40px 100px -20px rgba(0, 0, 0, 0.25)',
+            boxShadow: '0 40px 100px -20px rgba(0, 0, 0, 0.4)',
             scrollMarginTop: '100px',
           }}
         >
           <div 
             className="calendly-inline-widget" 
-            data-url="https://calendly.com/_apexai/partnerships-call?hide_gdpr_banner=1&background_color=ffffff&text_color=0a0f1e&primary_color=0152ff" 
-            style={{ minWidth: '320px', height: '700px' }} 
+            data-url="https://calendly.com/_apexai/partnerships-call?hide_gdpr_banner=1&background_color=0a0f1e&text_color=ffffff&primary_color=0152ff" 
+            style={{ minWidth: '320px', height: '800px' }} 
           />
         </div>
       </div>
