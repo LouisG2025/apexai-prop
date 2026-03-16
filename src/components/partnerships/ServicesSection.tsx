@@ -131,21 +131,32 @@ export default function ServicesSection() {
               You pitch it as part of your offer. We partner with you behind the scenes to design, build, and deliver it for your clients.
             </p>
 
-            <div className="hidden lg:block space-y-1">
-              {services.map((s, i) => (
+            <div className="hidden lg:block relative pl-2 border-l border-white/[0.04]">
+              {/* Sliding Indicator */}
+              <div 
+                className="absolute left-0 w-[2px] bg-[#0152ff] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[0_0_15px_rgba(1,82,255,0.8)]"
+                style={{ 
+                  height: 32, 
+                  top: activeIndex * 32 + (activeIndex * 4) + 6 // Adjust based on padding/gap
+                }}
+              />
+              
+              <div className="space-y-1">
+                {services.map((s, i) => (
+                  <div
+                    key={i}
+                    className={`text-[13px] py-1.5 px-3 rounded-lg transition-all duration-300 cursor-default ${i === activeIndex ? 'text-white bg-white/[0.04] translate-x-1' : 'text-white/30 hover:text-white/50'}`}
+                    style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500 }}
+                  >
+                    {s.title}
+                  </div>
+                ))}
                 <div
-                  key={i}
-                  className={`text-[13px] py-1.5 px-3 rounded-lg transition-all duration-200 ${i === activeIndex ? 'text-white bg-white/[0.06]' : 'text-white/30'}`}
+                  className={`text-[13px] py-1.5 px-3 rounded-lg transition-all duration-300 cursor-default ${activeIndex === services.length ? 'text-white bg-white/[0.04] translate-x-1' : 'text-white/30 hover:text-white/50'}`}
                   style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500 }}
                 >
-                  {s.title}
+                  Bespoke AI Automations
                 </div>
-              ))}
-              <div
-                className={`text-[13px] py-1.5 px-3 rounded-lg transition-all duration-200 ${activeIndex === services.length ? 'text-white bg-white/[0.06]' : 'text-white/30'}`}
-                style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500 }}
-              >
-                Bespoke AI Automations
               </div>
             </div>
           </div>
