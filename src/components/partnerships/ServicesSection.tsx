@@ -110,8 +110,8 @@ export default function ServicesSection() {
   return (
     <section id="services" ref={sectionRef} className="bg-[#0a0f1e] py-16 md:py-28 lg:py-36 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="lg:grid lg:grid-cols-[340px_1fr] lg:gap-16">
-          <div className="lg:sticky lg:top-32 lg:self-start mb-12 lg:mb-0">
+        <div className="md:grid md:grid-cols-[300px_1fr] lg:grid-cols-[340px_1fr] md:gap-12 lg:gap-16">
+          <div className="md:sticky md:top-32 md:self-start h-fit mb-12 md:mb-0">
             <p
               className={`text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3 transition-all duration-600 ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`}
               style={{ fontFamily: "'DM Sans', sans-serif" }}
