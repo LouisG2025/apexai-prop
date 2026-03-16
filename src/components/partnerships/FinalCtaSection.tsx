@@ -26,27 +26,27 @@ export default function FinalCtaSection() {
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-white blur-[120px] rounded-full" />
       </div>
 
-      <div className="max-w-[1000px] mx-auto text-center relative z-10">
+      <div className="max-w-[1240px] mx-auto text-center relative z-10">
         <h2
-          className="reveal-hidden text-white leading-[1.1] mb-4"
+          className="reveal-hidden text-white leading-[1.1] mb-6"
           style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800, fontSize: 'clamp(32px, 8vw, 72px)' }}
         >
           The agencies growing fastest in 2026 are{' '}
-          <span className="bg-[#0a0f1e] text-white px-4 py-1 inline-block -rotate-1">the ones adopting AI.</span>
+          <span className="bg-[#0a0f1e] text-white px-6 py-2 inline-block -rotate-1 shadow-2xl">the ones adopting AI.</span>
         </h2>
         <p
-          className="reveal-hidden text-lg md:text-xl text-white/90 mb-4"
+          className="reveal-hidden text-lg md:text-xl text-white/90 mb-6"
           style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500 }}
         >
           Disagree and face the consequences.
         </p>
-        <p className="reveal-hidden text-[16px] md:text-[17px] text-white/80 max-w-[580px] mx-auto mb-10 leading-[1.6]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+        <p className="reveal-hidden text-[16px] md:text-[17px] text-white/80 max-w-[640px] mx-auto mb-10 leading-[1.8]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
           This is a 30-minute call. No commitment. No pressure. Just a clear chat to see if your agency could be a fit to work with us.
         </p>
-        <div className="reveal-hidden mb-16">
+        <div className="reveal-hidden mb-20">
           <button
             onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-            className="w-full md:w-auto bg-white text-[#0152ff] text-base px-12 py-4 rounded-full hover:scale-[1.03] hover:shadow-[0_20px_40px_rgba(0,0,0,0.1)] transition-all duration-200"
+            className="w-full md:w-auto bg-white text-[#0152ff] text-base px-16 py-5 rounded-full hover:scale-[1.03] hover:shadow-[0_20px_60px_rgba(0,0,0,0.2)] transition-all duration-300 active:scale-95"
             style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700 }}
           >
             Book a Partnership Discovery Call
@@ -55,26 +55,25 @@ export default function FinalCtaSection() {
 
         <div
           id="booking"
-          className="reveal-hidden"
+          className="reveal-hidden overflow-hidden"
           style={{
-            maxWidth: '100%',
             width: '100%',
+            maxWidth: '1200px',
             margin: '0 auto',
-            minHeight: '1000px',
-            background: 'rgba(10, 15, 30, 0.4)',
-            backdropFilter: 'blur(20px)',
-            WebkitBackdropFilter: 'blur(20px)',
-            border: '1px solid rgba(255, 255, 255, 0.12)',
-            borderRadius: '8px',
-            overflow: 'hidden',
-            boxShadow: '0 40px 100px -20px rgba(0, 0, 0, 0.4)',
+            minHeight: '700px',
+            background: 'rgba(10, 15, 30, 0.45)',
+            backdropFilter: 'blur(24px)',
+            WebkitBackdropFilter: 'blur(24px)',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
+            borderRadius: '16px',
+            boxShadow: '0 50px 100px -20px rgba(0, 0, 0, 0.5)',
             scrollMarginTop: '100px',
           }}
         >
           <div 
             className="calendly-inline-widget" 
             data-url="https://calendly.com/_apexai/partnerships-call?hide_gdpr_banner=1&background_color=0a0f1e&text_color=ffffff&primary_color=0152ff" 
-            style={{ minWidth: '320px', height: '1000px' }} 
+            style={{ width: '100%', height: '700px', border: 'none' }} 
           />
         </div>
       </div>
