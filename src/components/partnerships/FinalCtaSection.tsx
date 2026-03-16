@@ -61,18 +61,18 @@ export default function FinalCtaSection() {
             maxWidth: '1200px',
             margin: '0 auto',
             minHeight: '700px',
-            background: 'rgba(10, 15, 30, 0.45)',
+            background: 'rgba(255, 255, 255, 0.9)',
             backdropFilter: 'blur(24px)',
             WebkitBackdropFilter: 'blur(24px)',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
             borderRadius: '16px',
-            boxShadow: '0 50px 100px -20px rgba(0, 0, 0, 0.5)',
+            boxShadow: '0 50px 100px -20px rgba(0, 0, 0, 0.3)',
             scrollMarginTop: '100px',
           }}
         >
           <div 
             className="calendly-inline-widget" 
-            data-url="https://calendly.com/_apexai/partnerships-call?hide_gdpr_banner=1&background_color=0a0f1e&text_color=ffffff&primary_color=0152ff" 
+            data-url="https://calendly.com/_apexai/partnerships-call?hide_gdpr_banner=1&background_color=ffffff&text_color=0a0f1e&primary_color=0152ff" 
             style={{ width: '100%', height: '700px', border: 'none' }} 
           />
         </div>
