@@ -110,8 +110,8 @@ export default function ServicesSection() {
   return (
     <section id="services" ref={sectionRef} className="bg-[#0a0f1e] py-16 md:py-28 lg:py-36 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="md:grid md:grid-cols-[300px_1fr] lg:grid-cols-[340px_1fr] md:gap-12 lg:gap-16">
-          <div className="md:sticky md:top-32 md:self-start h-fit mb-12 md:mb-0">
+        <div className="md:grid md:grid-cols-[300px_1fr] lg:grid-cols-[340px_1fr] md:gap-12 lg:gap-16 items-start">
+          <div className="md:sticky md:top-32 z-20 h-fit mb-12 md:mb-0">
             <p
               className={`text-[11px] uppercase tracking-[0.18em] text-white/40 mb-3 transition-all duration-600 ${revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[30px]'}`}
               style={{ fontFamily: "'DM Sans', sans-serif" }}
@@ -141,6 +141,12 @@ export default function ServicesSection() {
                   {s.title}
                 </div>
               ))}
+              <div
+                className={`text-[13px] py-1.5 px-3 rounded-lg transition-all duration-200 ${activeIndex === services.length ? 'text-white bg-white/[0.06]' : 'text-white/30'}`}
+                style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 500 }}
+              >
+                Bespoke AI Automations
+              </div>
             </div>
           </div>
 
@@ -172,7 +178,8 @@ export default function ServicesSection() {
             ))}
 
             <div
-              className="bg-[#111827] border border-white/[0.06] rounded-2xl p-6 md:p-8 lg:p-10"
+              ref={(el) => { cardRefs.current[services.length] = el; }}
+              className={`bg-[#111827] border rounded-2xl p-6 md:p-8 lg:p-10 transition-all duration-300 ${activeIndex === services.length ? 'border-[#0152ff]/30 shadow-[0_0_30px_rgba(1,82,255,0.08)]' : 'border-white/[0.06]'}`}
               style={{
                 opacity: revealed ? 1 : 0,
                 transform: revealed ? 'translateY(0)' : 'translateY(30px)',
