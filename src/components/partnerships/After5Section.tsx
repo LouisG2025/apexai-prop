@@ -42,8 +42,8 @@ export default function After5Section() {
             Part of the ApexAI Family
           </p>
 
-          <div className="reveal-hidden mb-4">
-            <img src="/long_main_logo_(8).webp" alt="After5 Digital" className="h-20 md:h-[120px] w-auto mb-8" />
+          <div className="reveal-hidden">
+            <img src="/long_main_logo_(8).webp" alt="After5 Digital" className="h-20 md:h-[120px] w-auto mb-2" />
           </div>
 
           <div className="reveal-hidden max-w-[560px] mb-8">
