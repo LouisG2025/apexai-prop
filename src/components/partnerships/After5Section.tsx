@@ -38,7 +38,7 @@ export default function After5Section() {
     <section id="after5" className="bg-[#0a0f1e] py-16 lg:py-24 px-6" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <div className="bg-[#111827] rounded-3xl p-6 sm:p-14 lg:px-20 lg:py-[72px] overflow-hidden relative border border-white/[0.05]">
-          <p className="reveal-hidden text-[11px] uppercase tracking-[0.25em] text-[#2EFFA1] mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          <p className="reveal-hidden text-[11px] uppercase tracking-[0.25em] text-[#2EFFA1] mb-2" style={{ fontFamily: "'DM Sans', sans-serif" }}>
             Part of the ApexAI Family
           </p>
 
