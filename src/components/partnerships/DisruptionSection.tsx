@@ -71,35 +71,43 @@ export default function ShiftSection() {
           This is what is happening right now.
         </h2>
 
-        <div className="mb-20">
+        <div className="mb-24">
           {shifts.map((s, i) => (
             <div
               key={s.num}
               ref={(el) => { itemRefs.current[i] = el; }}
-              className={`relative pl-4 lg:pl-6 border-b border-white/[0.05] ${i === 0 ? 'border-t border-t-white/[0.05]' : ''}`}
+              className={`relative pl-8 lg:pl-12 border-b border-white/[0.04] transition-all duration-700 group ${i === activeIndex ? 'bg-white/[0.01]' : ''} ${i === 0 ? 'border-t border-t-white/[0.04]' : ''}`}
               style={{
                 opacity: revealed ? 1 : 0,
                 transform: revealed ? 'translateY(0)' : 'translateY(30px)',
-                transition: `opacity 600ms ease ${i * 150}ms, transform 600ms ease ${i * 150}ms`,
+                transition: `opacity 800ms ease ${i * 150}ms, transform 800ms ease ${i * 150}ms, background-color 500ms ease`,
               }}
             >
+              {/* Vertical Indicator */}
               <div
-                className="absolute left-0 top-0 bottom-0 w-[2px] transition-all duration-300"
-                style={{ background: i === activeIndex ? '#0152ff' : 'transparent' }}
+                className={`absolute left-0 top-0 bottom-0 w-[3px] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${i === activeIndex ? 'bg-[#0152ff] shadow-[0_0_15px_rgba(1,82,255,0.6)]' : 'bg-transparent'}`}
               />
-              <div className="relative py-10 lg:py-14 overflow-hidden">
+              
+              <div className="relative py-12 lg:py-16 overflow-hidden">
+                {/* Background Number */}
                 <span
-                  className="absolute right-0 top-1/2 -translate-y-1/2 text-[70px] md:text-[120px] lg:text-[160px] leading-none text-[#0152ff]/[0.06] select-none pointer-events-none"
+                  className={`absolute right-0 top-1/2 -translate-y-1/2 text-[100px] md:text-[140px] lg:text-[200px] leading-none select-none pointer-events-none transition-all duration-1000 ease-out ${i === activeIndex ? 'text-[#0152ff]/10 scale-110' : 'text-white/[0.02] scale-100'}`}
                   style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 900 }}
                 >
                   {s.num}
                 </span>
-                <p
-                  className="relative text-[16px] lg:text-[17px] text-white/65 leading-[1.75] max-w-[640px]"
-                  style={{ fontFamily: "'DM Sans', sans-serif" }}
-                >
-                  {s.body}
-                </p>
+
+                <div className="relative z-10">
+                  <span className={`inline-block text-[12px] font-bold text-[#0152ff] mb-4 transition-all duration-500 ${i === activeIndex ? 'opacity-100 blur-0' : 'opacity-0 blur-sm'}`}>
+                    SHIFT {s.num}
+                  </span>
+                  <p
+                    className={`relative text-[17px] lg:text-[18px] leading-[1.75] max-w-[680px] transition-all duration-500 ${i === activeIndex ? 'text-white translate-x-1' : 'text-white/40'}`}
+                    style={{ fontFamily: "'DM Sans', sans-serif" }}
+                  >
+                    {s.body}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
