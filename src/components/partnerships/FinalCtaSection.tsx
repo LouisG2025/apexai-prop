@@ -57,15 +57,15 @@ export default function FinalCtaSection() {
           id="booking"
           className="reveal-hidden"
           style={{
-            maxWidth: '1000px',
+            maxWidth: '100%',
             width: '100%',
             margin: '0 auto',
-            minHeight: '800px',
+            minHeight: '1000px',
             background: 'rgba(10, 15, 30, 0.4)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
             border: '1px solid rgba(255, 255, 255, 0.12)',
-            borderRadius: '32px',
+            borderRadius: '8px',
             overflow: 'hidden',
             boxShadow: '0 40px 100px -20px rgba(0, 0, 0, 0.4)',
             scrollMarginTop: '100px',
@@ -74,7 +74,7 @@ export default function FinalCtaSection() {
           <div 
             className="calendly-inline-widget" 
             data-url="https://calendly.com/_apexai/partnerships-call?hide_gdpr_banner=1&background_color=0a0f1e&text_color=ffffff&primary_color=0152ff" 
-            style={{ minWidth: '320px', height: '800px' }} 
+            style={{ minWidth: '320px', height: '1000px' }} 
           />
         </div>
       </div>
