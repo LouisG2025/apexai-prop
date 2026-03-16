@@ -40,24 +40,49 @@ export default function GapSection() {
             {rows.map((row, i) => (
               <div
                 key={i}
-                className="grid md:grid-cols-2 gap-4 md:gap-8 py-7 border-t border-white/[0.06]"
+                className="grid md:grid-cols-2 gap-4 md:gap-8 py-8 border-t border-white/[0.06] group hover:bg-white/[0.01] transition-colors duration-500"
               >
-                <p className="reveal-left text-[17px] text-white leading-[1.5]" style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 700 }}>
-                  {row.you}
-                </p>
-                <p className="reveal-right text-[15px] text-white/50 leading-[1.65]" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-                  {row.us}
-                </p>
+                <div 
+                  className="transition-all duration-700 ease-out"
+                  style={{ 
+                    opacity: ref.current ? 1 : 0, 
+                    transform: ref.current ? 'translateX(0)' : 'translateX(-20px)',
+                    transitionDelay: `${i * 150}ms`
+                  }}
+                >
+                  <p className="text-[17px] text-white/50 leading-[1.5] group-hover:text-white/70 transition-colors duration-300" style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 700 }}>
+                    {row.you}
+                  </p>
+                </div>
+                
+                <div 
+                  className="relative transition-all duration-700 ease-out"
+                  style={{ 
+                    opacity: ref.current ? 1 : 0, 
+                    transform: ref.current ? 'translateX(0)' : 'translateX(20px)',
+                    transitionDelay: `${i * 150 + 75}ms`
+                  }}
+                >
+                  <div className="absolute inset-y-0 -left-4 w-[1px] bg-gradient-to-b from-transparent via-[#0152ff]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <p className="text-[15px] text-white leading-[1.65] font-medium" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    <span className="text-[#0152ff] font-bold mr-1">→</span> {row.us}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
 
-          <p
-            className="reveal-hidden text-[22px] lg:text-[24px] text-[#0152ff] text-center leading-[1.3]"
-            style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
+          <div
+            className="reveal-hidden relative py-6 px-10 rounded-2xl bg-[#0152ff]/[0.03] border border-[#0152ff]/10 overflow-hidden group"
           >
-            You are already doing the hard part. We make sure none of it goes to waste.
-          </p>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#0152ff]/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+            <p
+              className="text-[20px] md:text-[22px] lg:text-[24px] text-[#0152ff] text-center leading-[1.3] relative z-10"
+              style={{ fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 800 }}
+            >
+              You are already doing the hard part. We make sure none of it goes to waste.
+            </p>
+          </div>
         </div>
       </div>
     </section>
