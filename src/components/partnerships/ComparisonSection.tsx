@@ -64,10 +64,8 @@ export default function ComparisonSection() {
                 className="grid md:grid-cols-2 gap-x-8 lg:gap-x-16 border-b border-white/[0.04] group hover:bg-white/[0.01] transition-colors duration-500"
               >
                 <div 
-                  className="py-5 flex items-start gap-4 transition-all duration-700 ease-out"
+                  className="py-5 flex items-start gap-4 transition-all duration-700 ease-out reveal-left"
                   style={{ 
-                    opacity: ref.current ? 1 : 0, 
-                    transform: ref.current ? 'translateX(0)' : 'translateX(-20px)',
                     transitionDelay: `${i * 100}ms`
                   }}
                 >
@@ -78,10 +76,8 @@ export default function ComparisonSection() {
                 </div>
                 
                 <div 
-                  className="py-5 flex items-start gap-4 relative transition-all duration-700 ease-out"
+                  className="py-5 flex items-start gap-4 relative transition-all duration-700 ease-out reveal-right"
                   style={{ 
-                    opacity: ref.current ? 1 : 0, 
-                    transform: ref.current ? 'translateX(0)' : 'translateX(20px)',
                     transitionDelay: `${i * 100 + 50}ms`
                   }}
                 >

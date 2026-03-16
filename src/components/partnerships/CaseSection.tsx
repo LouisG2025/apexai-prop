@@ -43,10 +43,8 @@ export default function GapSection() {
                 className="grid md:grid-cols-2 gap-4 md:gap-8 py-8 border-t border-white/[0.06] group hover:bg-white/[0.01] transition-colors duration-500"
               >
                 <div 
-                  className="transition-all duration-700 ease-out"
+                  className="transition-all duration-700 ease-out reveal-left"
                   style={{ 
-                    opacity: ref.current ? 1 : 0, 
-                    transform: ref.current ? 'translateX(0)' : 'translateX(-20px)',
                     transitionDelay: `${i * 150}ms`
                   }}
                 >
@@ -56,10 +54,8 @@ export default function GapSection() {
                 </div>
                 
                 <div 
-                  className="relative transition-all duration-700 ease-out"
+                  className="relative transition-all duration-700 ease-out reveal-right"
                   style={{ 
-                    opacity: ref.current ? 1 : 0, 
-                    transform: ref.current ? 'translateX(0)' : 'translateX(20px)',
                     transitionDelay: `${i * 150 + 75}ms`
                   }}
                 >
